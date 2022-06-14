@@ -12,8 +12,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Puzzle from "./puzzles/Puzzle";
 import { Navigate } from "react-router-dom";
 import { auth } from "./firebase";
-import JoinClub from "./components/joinClub/joinClub";
+import JoinClub from "./components/JoinClub/joinClub";
 import { AuthProvider } from "./authProvider";
+import WebCallPage from "./videoCalling/WebCallPage";
 
 const App = () => {
   const signIn = () => {
@@ -51,6 +52,7 @@ const App = () => {
               path="/puzzles"
               element={<Puzzle user={auth.currentUser} signIn={signIn} />}
             ></Route>
+            <Route exact path="/webcall" element={<WebCallPage />}></Route>
             <Route exact path="/signUp" element={<SignupCard />}></Route>
           </Routes>
         </Router>
